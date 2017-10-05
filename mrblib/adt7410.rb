@@ -22,7 +22,7 @@ module PlatoDevice
             t=t-8192
         end
         t=t/16
-        t = t-273 if unit == :F   # Celsius temp. -> Fahrenheit temp.
+        t = (t*1.8)+32 if unit == :F   # Celsius temp. -> Fahrenheit temp.
         t.round(@ndig)
     end
 
